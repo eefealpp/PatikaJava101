@@ -1,0 +1,39 @@
+Java ile kullanıcıdan dik kenarlarının uzunluğunu alan ve hipotenüsü hesaplayan programı yazın.
+
+Ödev
+Üç kenar uzunluğunu kullanıcıdan aldığınız üçgenin alanını hesaplayan programı yazınız.
+
+Formül
+Üç𝑔𝑒𝑛𝑖𝑛 ç𝑒𝑣𝑟𝑒𝑠𝑖 = 2𝑢
+
+𝑢 = (a+b+c) / 2
+
+Alan * Alan = 𝑢 * (𝑢 − 𝑎)* (𝑢 − 𝑏) * (𝑢 − 𝑐)
+---------------------------------------------------------------------------------------------------
+package Giris;
+
+import java.util.Scanner;
+
+public class Ucgen {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("İlk dik kenar uzunluğunu giriniz : ");
+        double kenar1 = scanner.nextDouble();
+        System.out.println("İkinci dik kenar uzunluğunu giriniz : ");
+        double kenar2 = scanner.nextDouble();
+        double hipotenus = Math.sqrt((kenar1 * kenar1) + (kenar2 * kenar2));
+        System.out.println(hipotenus);
+
+        System.out.println("İkinci üçgenin alanı için kenarların değerlerini giriniz : ");
+        System.out.println("1. kenarın uzunluğu : ");
+        double kenar21 = scanner.nextDouble();
+        System.out.println("2. kenarın uzunluğu : ");
+        double kenar22 = scanner.nextDouble();
+        System.out.println("3. kenarın uzunluğu : ");
+        double kenar23 = scanner.nextDouble();
+        double u = (kenar21 + kenar22 + kenar23) / 2;
+        double alan = Math.sqrt(u * (u - kenar21) * (u - kenar22) * (u - kenar23));
+        System.out.println("İkinci üçgenin alanı : " + alan);
+    }
+}
+
