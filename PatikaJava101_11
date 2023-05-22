@@ -1,0 +1,50 @@
+package java101;
+
+import java.util.Scanner;
+
+public class SayiSiralama {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Sayı 1 :");
+        int sayi1 = scanner.nextInt();
+        System.out.println("Sayı 2 :");
+        int sayi2 = scanner.nextInt();
+        System.out.println("Sayı 3 :");
+        int sayi3 = scanner.nextInt();
+        int buy1, buy2, buy3;
+        if (sayi1 >= sayi2) {
+            buy1 = sayi1;
+            buy2 = sayi2;
+            if (sayi3 >= sayi1) {
+                buy1 = sayi3;
+                buy2 = sayi1;
+                buy3 = sayi2;
+            } else if (sayi3 < sayi1 && sayi3 >= sayi2) {
+                buy1 = sayi1;
+                buy2 = sayi3;
+                buy3 = sayi2;
+            } else {
+                buy1 = sayi1;
+                buy2 = sayi2;
+                buy3 = sayi3;
+            }
+        } else {
+            buy1 = sayi2;
+            buy2 = sayi1;
+            if (sayi3 >= sayi2) {
+                buy1 = sayi3;
+                buy2 = sayi2;
+                buy3 = sayi1;
+            } else if (sayi3 < sayi2 && sayi3 >= sayi1) {
+                buy1 = sayi2;
+                buy2 = sayi3;
+                buy3 = sayi1;
+            } else {
+                buy1 = sayi2;
+                buy2 = sayi1;
+                buy3 = sayi3;
+            }
+        }
+        System.out.println("Sıralama : " + buy1 + ">" + buy2 + ">" + buy3);
+    }
+}
