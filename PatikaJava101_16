@@ -1,0 +1,18 @@
+package java101;
+
+import java.util.Scanner;
+
+public class UcVeDort {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int toplam = 0;
+        System.out.println("Sayı giriniz : ");
+        int sayi = scanner.nextInt();
+        for (int i = 0; i <= sayi; i++) {
+            if (i % 3 == 0 && i % 4 == 0) {
+                toplam += i;
+            }
+        }
+        System.out.println("Toplam : " + toplam);
+    }
+}
