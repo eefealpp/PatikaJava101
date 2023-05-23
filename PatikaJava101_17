@@ -1,0 +1,22 @@
+package java101;
+
+import java.util.Scanner;
+
+public class TekVeCift {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int toplam = 0;
+        for (int i = 0; i < 1; i--) {
+            System.out.println("Sayı giriniz : ");
+            int sayi = scanner.nextInt();
+            if (sayi < 0) {
+                System.out.println("Program sonlandırılıyor...");
+                break;
+            }
+            if (sayi % 2 == 0 && sayi % 4 == 0) {
+                toplam += sayi;
+            }
+        }
+        System.out.println("Toplam : " + toplam);
+    }
+}
