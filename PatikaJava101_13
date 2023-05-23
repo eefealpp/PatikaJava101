@@ -1,0 +1,50 @@
+package java101;
+
+import java.util.Scanner;
+
+public class UcakBileti {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double yas = 1, mesafe = 0, yon = 1;
+        for (int i = 0; i < 1; i--) {
+            System.out.println("Yolcunun yaşını giriniz : ");
+            yas = scanner.nextInt();
+            if (yas >= 0 && yas <= 150) {
+                break;
+            } else {
+                System.out.println("Hatalı veri girdiniz...");
+            }
+        }
+        for (int y = 0; y < 1; y--) {
+            System.out.println("Mesafe kaç km?");
+            mesafe = scanner.nextInt();
+            if (mesafe >= 0) {
+                break;
+            } else {
+                System.out.println("Hatalı veri girdiniz...");
+            }
+        }
+        for (int x = 0; x < 1; x--) {
+            System.out.println("1)Tek yön\n2)Gidiş-Dönüş");
+            yon = scanner.nextInt();
+            if (yon == 1 || yon == 2) {
+                break;
+            } else {
+                System.out.println("Hatalı veri girdiniz...");
+            }
+        }
+        double fiyat = mesafe / 10;
+        if (yon == 2) {
+            fiyat *= 2;
+            fiyat = (fiyat * 8) / 10;
+        }
+        if (yas >= 0 && yas < 12) {
+            fiyat = (fiyat * 5) / 10;
+        } else if (yas >= 12 && yas < 24) {
+            fiyat = (fiyat * 9) / 10;
+        } else if (yas > 65) {
+            fiyat = (fiyat * 7) / 10;
+        }
+        System.out.println("Bilet Fiyatı : "+fiyat);
+    }
+}
