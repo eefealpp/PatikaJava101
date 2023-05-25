@@ -1,0 +1,18 @@
+package java101;
+
+import java.util.Scanner;
+
+public class DortVeBesinKuvvetleri {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Sayı giriniz : ");
+        int sayi = scanner.nextInt();
+        for (int i = 4; i <= sayi; i *= 4) {
+            System.out.println(i);
+        }
+        System.out.println("******************************");
+        for (int i = 5; i <= sayi; i *= 5) {
+            System.out.println(i);
+        }
+    }
+}
