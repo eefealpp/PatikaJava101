@@ -1,0 +1,16 @@
+package java101;
+
+import java.util.Scanner;
+
+public class Faktoriyel {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Sayı giriniz : ");
+        int sayi = scanner.nextInt();
+        int toplam = 1;
+        for (int i = 1; i <= sayi; i++) {
+            toplam *= i;
+        }
+        System.out.println(toplam);
+    }
+}
