@@ -1,0 +1,16 @@
+package java101;
+
+import java.util.Scanner;
+
+public class Harmonik {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Sayı giriniz : ");
+        double sayi = scanner.nextInt();
+        double toplam = 0;
+        for (double n = 1; n <= sayi; n++) {
+            toplam += (1 / n);
+        }
+        System.out.println(toplam);
+    }
+}
