@@ -1,0 +1,58 @@
+package java101;
+
+import java.util.Scanner;
+
+public class ATM {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String kullaniciAdi = "efealp";
+        String sifre = "12341234";
+        int sayac = 0;
+        int bakiye = 1923;
+        for (int i = 0; i > -1; i++) {
+            System.out.println("Kullanıcı adı : ");
+            String girdi1 = scanner.nextLine();
+            System.out.println("Şifre : ");
+            String girdi2 = scanner.nextLine();
+            if (kullaniciAdi.equals(girdi1) && sifre.equals(girdi2)) {
+                for (int j = 0; j > -1; j++) {
+                    System.out.println("Girmek istediğiniz menünün numarasını tuşlayınız :\n" +
+                            "1)Bakiye sorgulama" +
+                            "\n2)Para yatırma" +
+                            "\n3)Para çekme " +
+                            "\n4)Çıkış yapma ");
+                    int islem = scanner.nextInt();
+                    if (islem == 1) {
+                        System.out.println("Güncel bakiyeniz : " + bakiye);
+                    } else if (islem == 2) {
+                        System.out.println("Yatırmak istediğiniz tutarı giriniz : ");
+                        int ekle = scanner.nextInt();
+                        bakiye += ekle;
+                        System.out.println("Güncel bakiyeniz : " + bakiye);
+                    } else if (islem == 3) {
+                        System.out.println("Çekmek istediğiniz tutarı giriniz : ");
+                        int cikar = scanner.nextInt();
+                        if (cikar > bakiye) {
+                            System.out.println("Yetersiz bakiye...");
+                        } else {
+                            bakiye -= cikar;
+                            System.out.println("Güncel bakiyeniz : " + bakiye);
+                        }
+                    } else if (islem == 4) {
+                        break;
+                    } else {
+                        System.out.println("Hatalı tuşlama...");
+                    }
+                }
+            } else {
+                System.out.println("Hatalı kullanıcı adı veya şifre ... ");
+                sayac++;
+            }
+            if (sayac == 3) {
+                System.out.println("Çok fazla hatalı giriş yaptınız ...");
+                break;
+            }
+        }
+        System.out.println("Sistemden çıkarıldınız ...");
+    }
+}
