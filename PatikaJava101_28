@@ -1,0 +1,24 @@
+package java101;
+
+import java.util.Scanner;
+
+public class TersUcgen {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Satır sayısını giriniz : ");
+        int satir = scanner.nextInt();
+        int bosluk = 0;
+        int yildiz = (2 * satir) - 1;
+        for (int i = 1; i <= satir; i++) {
+            for (int x = 0; x <= bosluk; x++) {
+                System.out.print(" ");
+            }
+            bosluk++;
+            for (int y = 1; y <= yildiz; y++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            yildiz -= 2;
+        }
+    }
+}
